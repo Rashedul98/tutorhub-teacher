@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pro_widgets/pro_widgets.dart';
+import 'package:tutorhub_teacher/utilities/colors.dart';
 
 import '../../utilities/functions/email_validator.dart';
 import '../../utilities/functions/navigation.dart';
@@ -36,6 +37,36 @@ class _SigninScreenState extends State<SigninScreen> {
                 return Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    const Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        IntrinsicWidth(
+                          child: Row(
+                            children: [
+                              ProText(
+                                text: "Tutor",
+                                fontSize: 24,
+                                color: ProjectColors.primary,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              ProText(
+                                text: "Hub",
+                                fontSize: 24,
+                                color: ProjectColors.blue500,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ],
+                          ),
+                        ),
+                        ProText(
+                          text: "Teachers",
+                          fontSize: 14,
+                          color: ProjectColors.primary,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ],
+                    ),
+                    const ProGap(y: 24),
                     ProTextFormField(
                       borderColor: Colors.black12,
                       borderWidth: 1,

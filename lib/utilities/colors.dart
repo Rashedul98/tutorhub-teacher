@@ -6,7 +6,7 @@ class ProjectColors {
   static const Color black = Colors.black;
 
   //Theme Colors
-  static const Color primary = Color(0xff3799DE);
+  static const Color primary = Color.fromRGBO(40, 40, 40, 1);
 
   static const Color grey500 = Color.fromRGBO(214, 214, 217, 1);
   static const Color grey400 = Color.fromRGBO(222, 222, 225, 1);

@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pro_widgets/pro_widgets.dart';
 import 'package:tutorhub_teacher/utilities/functions/navigation.dart';
 import 'package:tutorhub_teacher/utilities/functions/null_checker.dart';
+import 'package:tutorhub_teacher/utilities/shared_preference.dart';
+import 'package:tutorhub_teacher/utilities/singleton.dart';
 import 'package:tutorhub_teacher/views/home/loaders/update_tution_loader.dart';
 import 'package:tutorhub_teacher/views/home/providers.dart';
 
@@ -19,6 +21,14 @@ class HomeTutionList extends StatefulWidget {
 
 class _HomeTutionListState extends State<HomeTutionList> {
   TextEditingController feeController = TextEditingController();
+  String? userName;
+
+  getUserData() async {
+    userName =
+        await locator<SharedPreferenceService>().getString(key: "userName");
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer(
@@ -97,7 +107,12 @@ class _HomeTutionListState extends State<HomeTutionList> {
                                                         TutionStatus
                                                             .rejected.value
                                                     ? TutionStatus.rejected.name
-                                                    : "Unknown",
+                                                    : tution.status ==
+                                                            TutionStatus
+                                                                .canceled.value
+                                                        ? TutionStatus
+                                                            .canceled.name
+                                                        : "Unknown",
                                   )
                                 ],
                               )

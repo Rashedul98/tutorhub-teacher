@@ -107,23 +107,32 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                     },
                   ),
                   const ProGap(y: 16),
-                  ProTextFormField(
-                    initialValue: ref.read(signupRequestModelProvider).gender,
-                    borderColor: Colors.black12,
-                    borderWidth: 1,
-                    hint: "Gender",
-                    onChanged: (value) {
-                      ref
-                          .read(signupRequestModelProvider.notifier)
-                          .update((state) => state.copyWith(gender: value));
-                    },
-                    validator: (value) {
-                      if (isNull(value)) {
-                        return 'This field can not be empty';
-                      } else {
-                        return null;
-                      }
-                    },
+                  const ProText(
+                    text: 'Select gender',
+                  ),
+                  const ProGap(y: 8),
+                  Row(
+                    children: [
+                      ProRadioButton(
+                        title: "Male",
+                        checked: ref.watch(signupRequestModelProvider).gender ==
+                            "Male",
+                        onTap: (_) {
+                          ref.read(signupRequestModelProvider.notifier).update(
+                              (state) => state.copyWith(gender: "Male"));
+                        },
+                      ),
+                      const ProGap(x: 16),
+                      ProRadioButton(
+                        title: "Female",
+                        checked: ref.watch(signupRequestModelProvider).gender ==
+                            "Female",
+                        onTap: (value) {
+                          ref.read(signupRequestModelProvider.notifier).update(
+                              (state) => state.copyWith(gender: "Female"));
+                        },
+                      ),
+                    ],
                   ),
                   const ProGap(y: 16),
                   ProTextFormField(

@@ -3,7 +3,7 @@ class SigninResponseModel {
   String? token;
   String? firstName;
   String? lastName;
-  String? contactInfo;
+  String? phone;
   String? email;
   String? school;
   String? college;
@@ -15,7 +15,7 @@ class SigninResponseModel {
       this.token,
       this.firstName,
       this.lastName,
-      this.contactInfo,
+      this.phone,
       this.email,
       this.school,
       this.college,
@@ -27,7 +27,7 @@ class SigninResponseModel {
     token = json['token'];
     firstName = json['first_name'];
     lastName = json['last_name'];
-    contactInfo = json['contact_info'];
+    phone = json['phone'];
     email = json['email'];
     school = json['school'];
     college = json['college'];

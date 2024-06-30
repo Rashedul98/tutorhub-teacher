@@ -86,8 +86,6 @@ class Expertise {
     return Expertise(
         subject: subject ?? this.subject, scope: scope ?? this.scope);
   }
-
-  map(Function(dynamic v) param0) {}
 }
 
 class Location {

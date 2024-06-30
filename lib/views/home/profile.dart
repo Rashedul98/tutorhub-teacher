@@ -52,7 +52,7 @@ class _ProfileBottomSheetState extends State<ProfileBottomSheet> {
           ),
           const ProGap(y: 8),
           ProText(
-            text: "Phone: $name",
+            text: "Phone: $phone",
             fontSize: 16,
             color: ProjectColors.primary,
           ),

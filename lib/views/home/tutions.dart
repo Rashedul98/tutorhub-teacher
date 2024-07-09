@@ -114,8 +114,9 @@ class _HomeTutionListState extends State<HomeTutionList> {
                             children: [
                               Expanded(
                                 child: ProText(
-                                  text:
-                                      "Subjects: ${tution.subjects?.join(', ')}",
+                                  text: "Subjects: ${tution.subjects?.map(
+                                        (e) => e.subject,
+                                      ).join(', ')}",
                                   fontSize: 12,
                                   color: ProjectColors.primary,
                                 ),

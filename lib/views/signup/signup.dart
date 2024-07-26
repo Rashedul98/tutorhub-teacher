@@ -7,6 +7,7 @@ import 'package:tutorhub_teacher/utilities/functions/get_position.dart';
 import 'package:tutorhub_teacher/utilities/functions/null_checker.dart';
 import 'package:tutorhub_teacher/views/signin/signin.dart';
 import 'package:tutorhub_teacher/views/signup/loader.dart';
+import 'package:tutorhub_teacher/views/signup/location_selector.dart';
 import 'package:tutorhub_teacher/views/signup/provider.dart';
 
 import '../../models/signup/request.dart';
@@ -28,6 +29,7 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
   Widget build(BuildContext context) {
     List<Expertise> expertise =
         ref.watch(signupRequestModelProvider).expertise ?? [];
+    Location? location = ref.watch(signupRequestModelProvider).location;
     return GestureDetector(
       onTap: () {
         FocusManager.instance.primaryFocus?.unfocus();
@@ -401,23 +403,33 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                   ),
                   const ProGap(y: 16),
                   ProButtonBasic(
+                    text: location?.latitude == null ||
+                            location?.longitude == null
+                        ? "Set Location"
+                        : "Change Location",
+                    fontSize: 16,
+                    fontColor: ProjectColors.primary,
+                    height: 45,
+                    width: double.infinity,
+                    backgroundColor: Colors.transparent,
+                    borderColor: ProjectColors.primary,
+                    borderWidth: 1,
+                    onTap: () {
+                      push(screen: const LocationSelector());
+                    },
+                  ),
+                  const ProGap(y: 16),
+                  ProButtonBasic(
                     text: "Sign up",
                     fontSize: 16,
                     height: 45,
                     width: double.infinity,
                     onTap: () async {
                       if (_formKey.currentState?.validate() ?? false) {
-                        Position position = await getCurrentPosition();
-
-                        ref.read(signupRequestModelProvider.notifier).update(
-                              (state) => state.copyWith(
-                                location: Location(
-                                  latitude: position.latitude,
-                                  longitude: position.longitude,
-                                ),
-                              ),
-                            );
-                        loader(screen: const SignupLoader());
+                        if (location?.latitude != null &&
+                            location?.longitude != null) {
+                          loader(screen: const SignupLoader());
+                        }
                       }
                     },
                   ),

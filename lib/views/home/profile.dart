@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:pro_widgets/pro_widgets.dart';
 import 'package:tutorhub_teacher/utilities/colors.dart';
 import 'package:tutorhub_teacher/utilities/functions/navigation.dart';
 import 'package:tutorhub_teacher/views/home/location_selector.dart';
-
 import '../../utilities/shared_preference.dart';
 import '../../utilities/singleton.dart';
 

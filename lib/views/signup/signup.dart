@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:pro_widgets/pro_widgets.dart';
-import 'package:tutorhub_teacher/utilities/functions/get_position.dart';
 import 'package:tutorhub_teacher/utilities/functions/null_checker.dart';
 import 'package:tutorhub_teacher/views/signin/signin.dart';
 import 'package:tutorhub_teacher/views/signup/loader.dart';
 import 'package:tutorhub_teacher/views/signup/location_selector.dart';
 import 'package:tutorhub_teacher/views/signup/provider.dart';
-
 import '../../models/signup/request.dart';
 import '../../utilities/colors.dart';
 import '../../utilities/enums.dart';

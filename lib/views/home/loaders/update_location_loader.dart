@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pro_widgets/pro_widgets.dart';
-import 'package:tutorhub_teacher/controllers/get_tution/get_tution.dart';
 import 'package:tutorhub_teacher/controllers/update_location/update_tution.dart';
 import 'package:tutorhub_teacher/utilities/functions/call_back.dart';
-
 import '../../../utilities/enums.dart';
 import '../../../utilities/functions/navigation.dart';
 

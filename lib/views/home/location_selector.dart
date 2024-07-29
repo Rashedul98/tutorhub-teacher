@@ -6,9 +6,6 @@ import 'package:tutorhub_teacher/models/update_location_request.dart';
 import 'package:tutorhub_teacher/utilities/functions/navigation.dart';
 import 'package:tutorhub_teacher/views/home/loaders/update_location_loader.dart';
 import 'package:tutorhub_teacher/views/home/providers.dart';
-import 'package:tutorhub_teacher/views/signup/provider.dart';
-
-import '../../models/signup/request.dart';
 import '../../utilities/colors.dart';
 import '../../utilities/functions/get_position.dart';
 

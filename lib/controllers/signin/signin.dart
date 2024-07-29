@@ -44,6 +44,16 @@ class SigninController extends StateNotifier<SigninState> {
           value: data.phone ?? "",
         );
 
+        locator<SharedPreferenceService>().setDouble(
+          key: "location_latitude",
+          value: data.latitude ?? 0,
+        );
+
+        locator<SharedPreferenceService>().setDouble(
+          key: "location_longitude",
+          value: data.longitude ?? 0,
+        );
+
         state = state.copyWith(
           data: data,
           dataState: DataState.loaded,

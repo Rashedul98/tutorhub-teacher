@@ -8,6 +8,8 @@ class SigninResponseModel {
   String? school;
   String? college;
   String? address;
+  double? latitude;
+  double? longitude;
   String? error;
 
   SigninResponseModel(
@@ -20,6 +22,8 @@ class SigninResponseModel {
       this.school,
       this.college,
       this.address,
+      this.latitude,
+      this.longitude,
       this.error});
 
   SigninResponseModel.fromJson(Map<String, dynamic> json) {
@@ -32,6 +36,8 @@ class SigninResponseModel {
     school = json['school'];
     college = json['college'];
     address = json['address'];
+    latitude = json['latitude'];
+    longitude = json['longitude'];
     error = json['error'];
   }
 }

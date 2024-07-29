@@ -16,6 +16,11 @@ class SharedPreferenceService {
     prefs.setBool(key, value);
   }
 
+  Future setDouble({required String key, required double value}) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setDouble(key, value);
+  }
+
   Future<String?> getString({required String key}) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.getString(key);
@@ -24,6 +29,11 @@ class SharedPreferenceService {
   Future<int?> getInt({required String key}) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.getInt(key);
+  }
+
+  Future<double?> getDouble({required String key}) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getDouble(key);
   }
 
   Future<bool?> getBool({required String key}) async {

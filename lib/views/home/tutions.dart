@@ -190,6 +190,7 @@ class _HomeTutionListState extends State<HomeTutionList> {
                                                         id: tution.id,
                                                       ),
                                                     );
+                                                feeController.clear();
                                                 loader(
                                                     screen:
                                                         const UpdateTutionLoader());
